@@ -174,21 +174,3 @@ def task():
     ax = plt.gca()
     df_l.plot(kind='line', x='t час.', y='Lc(t)', color='yellowgreen', ax=ax)
     plt.show()
-
-    # print("m:\n", m_list)
-    # print("sigma:\n", sigma_list)
-    #
-    # print("tnp:\n", tnp_list)
-    # print("gp:\n", gp_list)
-    # print("rp:\n", rp_list)
-    # print("ep:\n", ep_list)
-    #
-    # print("tnf:\n", tnf_list)
-    # print("gf:\n", gf_list)
-    # print("rf:\n", rf_list)
-    # print("ef:\n", ef_list)
-    #
-    # print("tnl:\n", tnl_list)
-    # print("gl:\n", gl_list)
-    # print("rl:\n", rl_list)
-    # print("el:\n", el_list)

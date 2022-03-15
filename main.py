@@ -8,10 +8,5 @@
 # from laba1 import task
 from laba2 import task
 
-
-def main():
-    task()
-
-
 if __name__ == "__main__":
-    main()
+    task()

@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from os import remove, path
 from scipy.integrate import trapz
 
-from lib import Exponential, Gamma, Rayleigh, TruncatedNormal
+from lib import Exponential, Gamma, Rayleigh, TruncatedNormal, Weibula
 
 TIME_STEP = 50
 TIME = 1000 + TIME_STEP
@@ -28,11 +28,13 @@ def task():
     # distribution = Gamma(30, 100)
     # distribution = Rayleigh(4 * 10 ** (-5))
     distribution = Exponential(0.007)
+    # distribution = Weibula(4, 500)
 
     # distribution_type = 'Усеченное нормальное'      # Если усеченное нормальное
     # distribution_type = 'Гамма'                     # Если гамма
     # distribution_type = 'Рэлея'                     # Если Рэлея
     distribution_type = 'Экспоненциальное'        # Если экспоненциальное
+    # distribution_type = 'Вейбула'                     # Если Вейбула
     # --------------------- #
 
     m = distribution.m

@@ -90,3 +90,23 @@ class TruncatedNormal:
         phi = (1 / (2 * pi) ** 0.5) * integral
         # print("time= ", time, " x=", (time - self.m0) / self.sigma0, " phi=", phi)
         return self.c * (0.5 - (phi if phi <= 0.5 else 0.5))
+
+
+class Weibula:
+    """
+        Распределение Вейбула W(alpha, beta)
+    """
+
+    def __init__(self, alpha: int, beta: int):
+        self.alpha = alpha
+        self.beta = beta
+        self.m = beta * gamma(1 + 1 / alpha)
+        self.sigma = beta * (gamma(1 + 2 / alpha) - (gamma(1 + 1 / alpha)) ** 2) ** 0.5
+
+    def f(self, time: int) -> float:
+        """ Плотность вероятности """
+        return self.alpha * time ** (self.alpha - 1) * exp(-(time / self.beta) ** self.alpha) / self.beta ** self.alpha
+
+    def p(self, time: int) -> float:
+        """Распределение времени безотказной работы"""
+        return exp(-(time / self.beta) ** self.alpha)
