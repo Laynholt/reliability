@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 from os import remove, path
 from scipy.integrate import trapz
 
@@ -7,6 +8,7 @@ from lib import Exponential, Gamma, Rayleigh, TruncatedNormal, Weibula
 
 TIME_STEP = 50
 TIME = 1000 + TIME_STEP
+PLOT_STEP = TIME_STEP
 
 
 f_list = []
@@ -25,9 +27,9 @@ def task():
     # Менять значения тут
     # --------------------- #
     # distribution = TruncatedNormal(360, 70)
-    # distribution = Gamma(30, 100)
+    distribution = Gamma(4, 120)
     # distribution = Rayleigh(4 * 10 ** (-5))
-    distribution = Exponential(0.007)
+    # distribution = Exponential(0.007)
     # distribution = Weibula(4, 500)
 
     # distribution_type = 'Усеченное нормальное'      # Если усеченное нормальное
@@ -120,6 +122,8 @@ def task():
     plt.title('Распределение времени безотказной работы')
     ax = plt.gca()
     df_p.plot(kind='line', x='t час.', y='P(t)', color='red', ax=ax)
+    start, end = ax.get_xlim()
+    ax.xaxis.set_ticks(np.arange(start + TIME_STEP, end, PLOT_STEP))
     plt.show()
 
     plt.title('Распределение времени безотказной работы системы')
@@ -127,11 +131,15 @@ def task():
     df_p.plot(kind='line', x='t час.', y='Pc(t) [m = 0]', color='blue', ax=ax)
     df_p.plot(kind='line', x='t час.', y='Pc(t) [m = 1]', color='green', ax=ax)
     df_p.plot(kind='line', x='t час.', y='Pc(t) [m = 2]', color='yellowgreen', ax=ax)
+    start, end = ax.get_xlim()
+    ax.xaxis.set_ticks(np.arange(start + TIME_STEP, end, PLOT_STEP))
     plt.show()
 
     plt.title('Плотность вероятности')
     ax = plt.gca()
     df_f.plot(kind='line', x='t час.', y='F(t)', color='red', ax=ax)
+    start, end = ax.get_xlim()
+    ax.xaxis.set_ticks(np.arange(start + TIME_STEP, end, PLOT_STEP))
     plt.show()
 
     plt.title('Плотность вероятности системы')
@@ -139,11 +147,15 @@ def task():
     df_f.plot(kind='line', x='t час.', y='Fc(t) [m = 0]', color='blue', ax=ax)
     df_f.plot(kind='line', x='t час.', y='Fc(t) [m = 1]', color='green', ax=ax)
     df_f.plot(kind='line', x='t час.', y='Fc(t) [m = 2]', color='yellowgreen', ax=ax)
+    start, end = ax.get_xlim()
+    ax.xaxis.set_ticks(np.arange(start + TIME_STEP, end, PLOT_STEP))
     plt.show()
 
     plt.title('Интенсивность отказов')
     ax = plt.gca()
     df_l.plot(kind='line', x='t час.', y='L(t)', color='red', ax=ax)
+    start, end = ax.get_xlim()
+    ax.xaxis.set_ticks(np.arange(start + TIME_STEP, end, PLOT_STEP))
     plt.show()
 
     plt.title('Интенсивность отказов системы')
@@ -151,4 +163,6 @@ def task():
     df_l.plot(kind='line', x='t час.', y='Lc(t) [m = 0]', color='blue', ax=ax)
     df_l.plot(kind='line', x='t час.', y='Lc(t) [m = 1]', color='green', ax=ax)
     df_l.plot(kind='line', x='t час.', y='Lc(t) [m = 2]', color='yellowgreen', ax=ax)
+    start, end = ax.get_xlim()
+    ax.xaxis.set_ticks(np.arange(start + TIME_STEP, end, PLOT_STEP))
     plt.show()
