@@ -22,15 +22,10 @@ def calculate_fpl(f_list: list, p_list: list, l_list: list, i: int, distribution
 def task():
     # Менять значения тут
     # --------------------- #
-    tn = TruncatedNormal(450, 120)
-    g = Gamma(35, 75)
+    tn = TruncatedNormal(360, 70)
+    g = Gamma(30, 100)
     r = Rayleigh(4 * 10 ** (-5))
-    e = Exponential(1 * 10 ** (-4))
-
-    # tn = TruncatedNormal(360, 70)
-    # g = Gamma(30, 100)
-    # r = Rayleigh(4 * 10 ** (-5))
-    # e = Exponential(7 * 10 ** (-3))
+    e = Exponential(7 * 10 ** (-3))
     # --------------------- #
 
     print("c = ", tn.c, "; k = ", tn.k)
