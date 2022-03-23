@@ -5,8 +5,8 @@
         3) Значения функции Лапласа: https://100task.ru/sample/119.aspx
 """
 
-# from laba1 import task
-from laba2 import task
+from laba1 import task
+# from laba2 import task
 
 if __name__ == "__main__":
     task()
