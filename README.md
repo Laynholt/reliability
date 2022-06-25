@@ -78,6 +78,7 @@ c =  1.0000068747252044 ; k =  3.133648451746235e-05
 ![image](https://user-images.githubusercontent.com/41357381/175787770-75a4ddd7-932b-43c0-98e7-fff60f5d84dc.png)
 
 Табличные значения
+
 ![image](https://user-images.githubusercontent.com/41357381/175787787-f0e8286a-f9ae-4ff7-af08-f4a1433395a8.png)
 
 ![image](https://user-images.githubusercontent.com/41357381/175787794-a7d69e19-4b2a-4432-a6c5-5ee604371c80.png)
